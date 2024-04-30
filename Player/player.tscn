@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://pqsipso4n1n6"]
+
+[ext_resource type="Script" path="res://Player/player.cs" id="1_fv63k"]
+[ext_resource type="Texture2D" uid="uid://b4t1ma2dopk41" path="res://Player/submarine_7105760.png" id="1_ncbig"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gjsuk"]
+size = Vector2(22.6245, 10.8745)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_fv63k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_gjsuk")
+
+[node name="Submarine7105760" type="Sprite2D" parent="."]
+position = Vector2(4, 1.00003)
+scale = Vector2(0.0527346, 0.0485868)
+texture = ExtResource("1_ncbig")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(3, 10)
+zoom = Vector2(1.75, 1.75)
+limit_left = 0
+limit_top = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

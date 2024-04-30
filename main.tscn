@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://yaqt3g4qc188"]
+
+[ext_resource type="Script" path="res://main.cs" id="1_hba21"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_hba21")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 295.0
+offset_top = 212.0
+offset_right = 495.0
+offset_bottom = 298.0
+text = "Play"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 699.0
+offset_top = 211.0
+offset_right = 899.0
+offset_bottom = 297.0
+text = "Quit"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
