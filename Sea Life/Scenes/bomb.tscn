@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://sfcoy2c5vn40"]
+
+[ext_resource type="Script" path="res://Scripts/bomb.gd" id="1_4aa73"]
+[ext_resource type="Texture2D" uid="uid://b1ary04e1infw" path="res://Obstacles/10.png" id="1_6xvqe"]
+[ext_resource type="PackedScene" uid="uid://bna5pvub8dkm7" path="res://Scenes/trash.tscn" id="3_x1imj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wp4gg"]
+radius = 39.0128
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_4aa73")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -1)
+scale = Vector2(0.369, 0.369)
+texture = ExtResource("1_6xvqe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -1)
+shape = SubResource("CircleShape2D_wp4gg")
+
+[node name="Sprite2D2" parent="." instance=ExtResource("3_x1imj")]
+position = Vector2(-1, -4)
+scale = Vector2(0.2395, 0.2395)
+script = null
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

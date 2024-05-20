@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bna5pvub8dkm7"]
+
+[ext_resource type="Script" path="res://Scripts/trash.gd" id="1_5wgiw"]
+[ext_resource type="Texture2D" uid="uid://dopy0x58q2yb5" path="res://Obstacles/6.png" id="1_lltqf"]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_5wgiw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.90735e-06, 1.90735e-06)
+scale = Vector2(0.238438, 0.238438)
+texture = ExtResource("1_lltqf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-12, -14, -19, -7, -22, 3, -24, 10, -24, 15, -22, 27, -18, 29, -9, 31, 2, 31, 10, 31, 23, 28, 24, 11, 22, -1, 19, -7, 15, -11, 11, -14, 5, -18, 4, -21, 9, -27, 5, -31, 2, -31, -1, -31, -3, -31, -4, -29, -6, -29, -8, -27, -8, -24, -3, -20, -3, -18)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
